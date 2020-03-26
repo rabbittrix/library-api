@@ -62,6 +62,6 @@ public class BookServiceImpl implements com.jrsf.libraryapi.service.BookService 
 
     @Override
     public Optional<Book> getBookByIsbn(String isbn) {
-        return null;
+        return repository.findByIsbn(isbn);
     }
 }
