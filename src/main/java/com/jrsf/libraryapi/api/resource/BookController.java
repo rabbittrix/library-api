@@ -77,7 +77,7 @@ public class BookController {
     @GetMapping("{id}/loans")
     public Page<LoanDTO> loansByBook(@PathVariable Integer id, Pageable pageable){
         Book book = service.getById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        Page<Loan> result = loanService.getLoanByBook(book, pageable);
+        Page<Loan> result = loanService.getLoansByBook(book, pageable);
         List<LoanDTO> list = result.getContent()
                 .stream()
                 .map(loan -> {

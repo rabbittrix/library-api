@@ -8,20 +8,24 @@ import com.jrsf.libraryapi.model.repository.LoanRepository;
 import com.jrsf.libraryapi.service.LoanService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class LoanServiceImpl implements LoanService {
+
     private LoanRepository repository;
+
     public LoanServiceImpl(LoanRepository repository) {
         this.repository = repository;
     }
 
     @Override
-    public Loan save(Loan loan) {
-        if (repository.existsByBookAndNotReturned(loan.getBook())){
+    public Loan save( Loan loan ) {
+        if( repository.existsByBookAndNotReturned(loan.getBook()) ){
             throw new BusinessException("Book already loaned");
         }
         return repository.save(loan);
@@ -39,7 +43,7 @@ public class LoanServiceImpl implements LoanService {
 
     @Override
     public Page<Loan> find(LoanFilterDTO filterDTO, Pageable pageable) {
-        return repository.findByBookIsbnOrCustomer(filterDTO.getIsbn(), filterDTO.getCustomer(), pageable);
+        return repository.findByBookIsbnOrCustomer( filterDTO.getIsbn(), filterDTO.getCustomer(), pageable );
     }
 
     @Override
@@ -53,5 +57,4 @@ public class LoanServiceImpl implements LoanService {
         LocalDate threeDaysAgo = LocalDate.now().minusDays(loanDays);
         return repository.findByLoanDateLessThanAndNotReturned(threeDaysAgo);
     }
-
 }

@@ -65,11 +65,21 @@ public class LoanRepositoryTest {
         assertThat(result).hasSize(1).contains(loan);
     }
 
-    public Loan createAndPersistLoan(LocalDate localDate){
+    @Test
+    @DisplayName("Deve retornar vazio quando não houver emprestimos atrasados.")
+    public void notFindByLoanDateLessThanAndNotReturnedTest(){
+        Loan loan = createAndPersistLoan(LocalDate.now());
+
+        List<Loan> result = repository.findByLoanDateLessThanAndNotReturned(LocalDate.now().minusDays(4));
+
+        assertThat(result).isEmpty();
+    }
+
+    public Loan createAndPersistLoan(LocalDate loanDate){
         Book book = createNewBook("123");
         entityManager.persist(book);
 
-        Loan loan = Loan.builder().book(book).customer("Jessica").loanDate(localDate).build();
+        Loan loan = Loan.builder().book(book).customer("Jessica").loanDate(loanDate).build();
         entityManager.persist(loan);
 
         return loan;

@@ -2,7 +2,7 @@ package com.jrsf.libraryapi.service.impl;
 
 import com.jrsf.libraryapi.exception.BusinessException;
 import com.jrsf.libraryapi.model.entity.Book;
-import com.jrsf.libraryapi.model.repositiry.BookRepository;
+import com.jrsf.libraryapi.model.repository.BookRepository;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;

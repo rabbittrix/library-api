@@ -1,7 +1,6 @@
 package com.jrsf.libraryapi.service;
 
 import com.jrsf.libraryapi.api.dto.LoanFilterDTO;
-import com.jrsf.libraryapi.api.resource.BookController;
 import com.jrsf.libraryapi.model.entity.Book;
 import com.jrsf.libraryapi.model.entity.Loan;
 import org.springframework.data.domain.Page;
@@ -19,7 +18,7 @@ public interface LoanService {
 
     Page<Loan> find(LoanFilterDTO filterDTO, Pageable pageable);
 
-    Page<Loan> getLoanByBook(Book book, Pageable pageable);
+    Page<Loan> getLoansByBook(Book book, Pageable pageable);
 
     List<Loan> getAllLateLoans();
 }

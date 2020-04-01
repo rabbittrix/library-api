@@ -1,7 +1,6 @@
 package com.jrsf.libraryapi.model.repository;
 
 import com.jrsf.libraryapi.model.entity.Book;
-import com.jrsf.libraryapi.model.repositiry.BookRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

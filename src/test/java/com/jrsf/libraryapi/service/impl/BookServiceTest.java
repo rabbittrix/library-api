@@ -1,9 +1,9 @@
-package com.jrsf.libraryapi.service;
+package com.jrsf.libraryapi.service.impl;
 
 import com.jrsf.libraryapi.exception.BusinessException;
 import com.jrsf.libraryapi.model.entity.Book;
 import com.jrsf.libraryapi.model.repository.BookRepository;
-import com.jrsf.libraryapi.service.impl.BookServiceImpl;
+import com.jrsf.libraryapi.service.BookService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
