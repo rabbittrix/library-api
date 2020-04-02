@@ -159,7 +159,6 @@ public class BookControllerTest {
                 .delete(BOOK_API.concat("/" + 1));
         mvc.perform(request)
                 .andExpect(status().isNoContent());
-
     }
 
     @Test
@@ -170,7 +169,6 @@ public class BookControllerTest {
                 .delete(BOOK_API.concat("/" + 1));
         mvc.perform(request)
                 .andExpect(status().isNotFound());
-
     }
 
     @Test
@@ -198,7 +196,6 @@ public class BookControllerTest {
                 .andExpect(jsonPath("title").value(createNewBook().getTitle()))
                 .andExpect(jsonPath("author").value(createNewBook().getAuthor()))
                 .andExpect(jsonPath("isbn").value("321"));
-
     }
 
     @Test
@@ -242,7 +239,6 @@ public class BookControllerTest {
                 .andExpect(jsonPath("totalElements").value(1))
                 .andExpect(jsonPath("pageable.pageSize").value(100))
                 .andExpect(jsonPath("pageable.pageNumber").value(0));
-
     }
 
     private BookDTO createNewBook() {
