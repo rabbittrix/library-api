@@ -30,6 +30,6 @@ public class Book {
     @Column
     private String isbn;
 
-    @OneToMany(mappedBy = "Book")
+    @OneToMany(mappedBy = "book")
     private List<Loan> loans;
 }
