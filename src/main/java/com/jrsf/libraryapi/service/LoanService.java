@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface LoanService {
-    Loan save(Loan loan);
+    Loan save( Loan loan );
 
     Optional<Loan> getById(Integer id);
 
