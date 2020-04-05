@@ -23,7 +23,7 @@ public class LibraryApiApplication {
 	public ModelMapper modelMapper(){
 		return new ModelMapper();
 	}
-
+/*
 	@Bean
 	public CommandLineRunner runner(){
 		return args -> {
@@ -31,7 +31,7 @@ public class LibraryApiApplication {
 			emailService.sendMails("Test service email", emails);
 		};
 	}
-
+*/
 	public static void main(String[] args) {
 		SpringApplication.run(LibraryApiApplication.class, args);
 	}
