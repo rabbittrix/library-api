@@ -15,10 +15,10 @@ import java.util.List;
 @SpringBootApplication
 @EnableScheduling
 public class LibraryApiApplication {
-
+/*
 	@Autowired
 	private EmailService emailService;
-
+*/
 	@Bean
 	public ModelMapper modelMapper(){
 		return new ModelMapper();

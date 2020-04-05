@@ -1,6 +1,5 @@
 package com.jrsf.libraryapi.api.resource;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jrsf.libraryapi.api.dto.LoanDTO;
 import com.jrsf.libraryapi.api.dto.LoanFilterDTO;
@@ -35,10 +34,8 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Optional;
 
-import static com.jrsf.libraryapi.api.resource.BookControllerTest.BOOK_API;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.web.servlet.function.RequestPredicates.contentType;
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
