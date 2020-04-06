@@ -23,7 +23,6 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
-
     }
 
     private ApiInfo apiInfo(){
@@ -33,7 +32,6 @@ public class SwaggerConfig {
                 .version("1.0")
                 .contact(contact())
                 .build();
-
     }
 
     private Contact contact(){
