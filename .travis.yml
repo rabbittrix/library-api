@@ -5,4 +5,4 @@ dist: trusty
 before_install:
   - chmod +x mvnw
 after_success:
-  - bash <(curl -s http://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
